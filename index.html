@@ -202,7 +202,8 @@
 }
 
 
-/* Mobile avatar support — existing desktop design unchanged */
+/* Mobile avatar support */
+
 @media (max-width: 1023px) {
 
     .hero-visual {
@@ -265,6 +266,113 @@
         width: 270px;
         max-width: 85vw;
     }
+}
+
+
+/* =====================================================
+   WIDER FLOATING READ / STOP CONTROLS
+   ===================================================== */
+
+.floating-controls {
+
+    position: fixed;
+
+    right: 24px;
+
+    bottom: 24px;
+
+    z-index: 100;
+
+    width: 300px;
+
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 10px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(17, 16, 36, 0.94);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.40),
+        0 0 30px rgba(139, 92, 246, 0.18);
+
+}
+
+
+/* Bigger buttons */
+
+.floating-controls button {
+
+    flex: 1;
+
+    min-width: 120px;
+
+    height: 48px;
+
+    padding: 0 18px;
+
+    border-radius: 13px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 640px) {
+
+    .floating-controls {
+
+        right: 12px;
+
+        left: 12px;
+
+        bottom: 12px;
+
+        width: auto;
+
+        min-height: 66px;
+
+        padding: 8px;
+
+        gap: 8px;
+
+        border-radius: 18px;
+
+    }
+
+    .floating-controls button {
+
+        min-width: 0;
+
+        height: 46px;
+
+        padding: 0 12px;
+
+        font-size: 13px;
+
+    }
+
 }
 
 </style>
@@ -615,37 +723,6 @@
                         >
                             AI Portfolio Guide
                         </p>
-
-
-                        <div class="mt-4 flex justify-center gap-2">
-
-                            <button
-                                id="readPortfolioBtn"
-                                type="button"
-                                class="px-4 py-2 rounded-lg
-                                       bg-violet-600
-                                       hover:bg-violet-500
-                                       text-xs font-semibold
-                                       transition"
-                            >
-                                🔊 Read
-                            </button>
-
-
-                            <button
-                                id="stopSpeakingBtn"
-                                type="button"
-                                class="px-4 py-2 rounded-lg
-                                       border border-white/10
-                                       bg-white/5
-                                       hover:bg-white/10
-                                       text-xs font-semibold
-                                       transition"
-                            >
-                                ■ Stop
-                            </button>
-
-                        </div>
 
                     </div>
 
@@ -1643,6 +1720,30 @@
     </div>
 
 </footer>
+
+
+<!-- FLOATING READ / STOP BUTTONS -->
+
+<div class="floating-controls">
+
+    <button
+        id="readPortfolioBtn"
+        type="button"
+        class="bg-violet-600 hover:bg-violet-500 text-white"
+    >
+        🔊 Read Portfolio
+    </button>
+
+
+    <button
+        id="stopSpeakingBtn"
+        type="button"
+        class="border border-white/10 bg-white/5 hover:bg-white/10 text-gray-200"
+    >
+        ■ Stop
+    </button>
+
+</div>
 
 
 <script>
