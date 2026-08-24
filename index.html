@@ -201,6 +201,72 @@
 
 }
 
+
+/* Mobile avatar support — existing desktop design unchanged */
+@media (max-width: 1023px) {
+
+    .hero-visual {
+        width: 100%;
+        max-width: 390px;
+        height: 390px;
+        margin: 30px auto 90px;
+    }
+
+    .animated-avatar {
+        width: 350px;
+        max-width: 90vw;
+        height: auto;
+    }
+
+    .ai-avatar-area {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .hero-visual {
+        width: 100%;
+        max-width: 340px;
+        height: 340px;
+        margin: 20px auto 100px;
+    }
+
+    .animated-avatar {
+        width: 300px;
+        max-width: 82vw;
+        height: auto;
+    }
+
+    .ai-avatar-area #avatarGlow {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .ai-avatar-area #speakingDot {
+        right: 12%;
+        bottom: 17%;
+    }
+
+    .hero-visual > div.absolute.w-\[300px\] {
+        width: min(300px, 90vw);
+    }
+}
+
+@media (max-width: 400px) {
+
+    .hero-visual {
+        max-width: 310px;
+        height: 310px;
+    }
+
+    .animated-avatar {
+        width: 270px;
+        max-width: 85vw;
+    }
+}
+
 </style>
 
 </head>
@@ -461,7 +527,7 @@
             </div>
 
 
-            <div class="hidden lg:flex justify-center">
+            <div class="flex justify-center">
 
                 <div class="hero-visual float">
 
